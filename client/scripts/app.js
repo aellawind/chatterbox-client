@@ -47,7 +47,11 @@ var app = {
           }
         }
         $(".username").on('click', function() {
-          console.log('this');
+          var newFriend = $(this).text();
+          if (app.userFriends.indexOf(newFriend) === -1) {
+            app.userFriends.push(newFriend);
+          }
+          console.log(app.userFriends);
         });
       },
       error: function (data) {
@@ -76,13 +80,12 @@ var app = {
   },
 
   addMessage: function(message) {
-    if (message.text) {message.text = app.escapeUserInput(message.text).slice(0,400);}
     if (message.username) {message.username = app.escapeUserInput(message.username).slice(0,100);}
+    if (app.userFriends.indexOf(message.username) !== -1) { message.username = "<u>" + message.username + "</u>";}
+    if (message.text) {message.text = app.escapeUserInput(message.text).slice(0,400);}
     if (message.roomname) { message.roomname = app.escapeUserInput(message.roomname);}
     var $message = "<div class='chat'><span class='username'>" + message.username + "</span>: " + message.text + "<br>" + "<span class='date'>" + new Date(message.createdAt) + "</span></div>";
     $('#chats').append($message);
-    //listener for username
-    // Friend the username
   },
 
   escapeUserInput: function(s) {
