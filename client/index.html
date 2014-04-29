@@ -2,9 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>chatterbox</title>
+    <title>nick & amira's chatterbox</title>
     <link rel="stylesheet" href="styles/styles.css">
-
     <!-- dependencies -->
     <script src="bower_components/jquery/jquery.min.js"></script>
     <!-- your scripts -->
@@ -13,8 +12,17 @@
   </head>
   <body>
     <div id="main">
-      <h1>chatterbox</h1>
-      <!-- Your HTML goes here! -->
+      <h1>nick & amira's chatterbox</h1>
+      <div id="rooms">
+      </div>
+      <div id='chats'>
+      </div>
+
+      <form method="post">
+        <input type="text" id="message"/>
+        <button id="send">Send</button>
+      </form>
+      <button id="fetch">Fetch</button>
     </div>
   </body>
 </html>
