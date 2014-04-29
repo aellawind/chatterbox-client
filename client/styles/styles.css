@@ -88,3 +88,9 @@ form input[type=text] {
 .spinner img {
     padding: 10px;
 }
+
+.date {
+    font-size:70%;
+    font-style:italic;
+    color: #696969;
+}
