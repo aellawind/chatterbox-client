@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>nick & amira's chatterbox</title>
+    <title>amira's chatterbox</title>
     <link rel="stylesheet" href="styles/styles.css">
     <!-- dependencies -->
     <script src="bower_components/jquery/jquery.min.js"></script>
@@ -12,23 +12,25 @@
     <script src="scripts/app.js"></script>
   </head>
   <body>
+    <script>
+    $(function(){
+      app.init();
+    });
+    </script>
     <div id="main">
-      <h1>nick & amira's chatterbox</h1>
-      <select id="roomSelect">
-      <option></option>
-      </select>
-      <button id="fetch">Fetch</button>
-      <button id="refreshrooms">Refresh rooms</button>
-      <button id="createRoom">Create a Room</button>
-      <div id='chats'>
-      </div>
-
+      <h1>amira's chatterbox</h1>
       <form method="post">
         <input type="text" id="message"/>
         <button id="send">Send</button>
       </form>
-
-
+      <select id="roomSelect">
+      <option></option>
+      </select>
+      <button id="gotoroom">Go To Room</button>
+      <button id="createRoom">Create a Room</button>
+      <br><br>
+      <div id='chats'>
+      </div>
     </div>
   </body>
 </html>
